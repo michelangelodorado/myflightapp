@@ -6,6 +6,9 @@ const port = 8080;
 // Middleware to parse JSON in the request body
 app.use(express.json());
 
+// Enable CORS for all routes
+app.use(cors());
+
 // Sample data
 const flights = [
   { id: 1, origin: 'SIN', destination: 'MNL', airlines: 'PAL'  },
@@ -28,7 +31,6 @@ app.get('/getFlight', (req, res) => {
 
 // Route to get a specific flight by ID
 app.get('/getFlight/:id', (req, res) => {
-  res.header('Access-Control-Allow-Origin', '*');
   const flightId = parseInt(req.params.id);
   const flight = flights.find(u => u.id === flightId);
  // const formattedflight = JSON.stringify(flight, null, 2);
