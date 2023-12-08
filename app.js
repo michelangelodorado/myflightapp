@@ -6,8 +6,12 @@ const port = 8080;
 // Middleware to parse JSON in the request body
 app.use(express.json());
 
-// Enable CORS for all routes
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:80', // Replace with the actual port of your frontend
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204,
+}));
 
 // Sample data
 const flights = [
