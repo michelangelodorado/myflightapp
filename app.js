@@ -7,7 +7,7 @@ const port = 8080;
 app.use(express.json());
 
 app.use(cors({
-  origin: 'http://localhost:80', // Replace with the actual port of your frontend
+  origin: 'http://localhost:8083', // Replace with the actual port of your frontend
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   optionsSuccessStatus: 204,
