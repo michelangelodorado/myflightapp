@@ -28,6 +28,7 @@ app.get('/getFlight', (req, res) => {
 
 // Route to get a specific flight by ID
 app.get('/getFlight/:id', (req, res) => {
+  res.header('Access-Control-Allow-Origin', '*');
   const flightId = parseInt(req.params.id);
   const flight = flights.find(u => u.id === flightId);
  // const formattedflight = JSON.stringify(flight, null, 2);
