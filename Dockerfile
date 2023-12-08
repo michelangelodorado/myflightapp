@@ -13,6 +13,9 @@ RUN npm install
 # Install express
 RUN npm install express
 
+# Install CORS
+RUN npm install cors
+
 # Copy the application code to the working directory
 COPY . .
 
