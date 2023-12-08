@@ -53,7 +53,7 @@ app.post('/createFlight', (req, res) => {
 function isValidFlight(flight) {
   // Implement your validation logic here
   // For example, check if the required fields are present
-  return flight && flight.firstname && flight.surname && flight.number;
+  return flight && flight.origin && flight.destination && flight.airplane;
 }
 
 // Route to update a flight by ID
